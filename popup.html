@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>PopUp!!!</title>
+  <link rel="stylesheet" href=style.css>
+<!--
+  <script src="main.js"></script>
+-->
+</head>
+
+<body>
+<h1> POPUP </h1>
+<div class="controls">
+  <div style="display:flex; align-items:center;">
+    <button id="move-to">Move window to</button>
+    left: <input id="move-to-left" style="width:50px;" size=5 value="100" type="number"></input>
+    top: <input id="move-to-top" style="width:50px;" size=5 value="50" type="number"></input>
+    <button id="resize-to">Resize window to</button>
+    width: <input id="resize-to-width" style="width:50px;" size=5 value="720" type="number"></input>
+    height: <input id="resize-to-height" style="width:50px;" size=5 value="525" type="number"></input>
+  </div>
+</div>
+<script>
+window.onload = () => {
+  document.getElementById('move-to-left').value = window.screenLeft;
+  document.getElementById('move-to-top').value = window.screenTop;
+  document.getElementById('resize-to-width').value = window.outerWidth;
+  document.getElementById('resize-to-height').value = window.outerHeight;
+
+  // Handle control button clicks and input events.
+  document.getElementById("move-to").addEventListener('click', () => {
+    window.moveTo(document.getElementById('move-to-left').value, document.getElementById('move-to-top').value);
+  });
+  document.getElementById("resize-to").addEventListener('click', () => {
+    window.resizeTo(document.getElementById('resize-to-width').value, document.getElementById('resize-to-height').value);
+  });
+}
+</script>
+</body>

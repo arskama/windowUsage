@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Window play</title>
+  <meta name="description" content="playing with windows">
+  <meta name="keyword" content="HTML,CSS,JavaScript">
+  <link rel="stylesheet" href=style.css>
+<!--
+  <script src="main.js"></script>
+-->
+</head>
+
+<body>
+  <section> 
+  <h1>Playing a bit</h1>
+  </section>
+  <button type="button"onclick="openWindowAt()">open!</button>
+  <button type="button"onclick="moveWindowTo()">moveTo!</button>
+  <button type="button"onclick="openPopTo()">popUp!</button>
+<script>
+
+    var windowWhat;
+    url="http://www.cnn.com/"
+    var windowFeatures="left=100,top=300,width=800,height=200,menubar=yes,resizable=yes,scrollbars=yes,status=yes";
+    var windowFeaturesX="left=100,top=100,width=400,height=400";
+    function openWindowAt() {
+        console.log("yeah");
+        windowWhat = window.open(url, '_blank', windowFeaturesX);
+    }
+
+    function moveWindowTo() {
+        console.log("moveto");
+        window.moveTo(500,100);
+    }
+
+    function openPopTo() {
+        console.log("popto");
+        window.open("./popup.html", "_blank", windowFeatures);
+
+    }
+</script>
+</body>
+</html>
